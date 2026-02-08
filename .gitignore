@@ -1,1 +1,2 @@
 app/*.pt
+app/__pycache__/
