@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English to Nepali Translator</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 80%; max-width: 600px; }
+        h1 { color: #333; text-align: center; }
+        textarea { width: 100%; height: 100px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; resize: none; font-size: 16px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 18px; margin-top: 10px; }
+        button:hover { background-color: #0056b3; }
+        .result-box { margin-top: 20px; padding: 15px; background-color: #e9ecef; border-left: 5px solid #007bff; border-radius: 3px; }
+        .label { font-weight: bold; color: #555; margin-bottom: 5px; display: block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>English ➔ Nepali</h1>
+        <form method="POST">
+            <span class="label">Enter English Text:</span>
+            <textarea name="text_input" placeholder="Type something here...">{{ original }}</textarea>
+            <button type="submit">Translate</button>
+        </form>
+
+        {% if translation %}
+        <div class="result-box">
+            <span class="label">Nepali Translation:</span>
+            <p style="font-size: 20px;">{{ translation }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
